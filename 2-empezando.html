@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo realizado por Rubén Roldán Cantón</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <a href="1-index.html"><img src="imgs/logojquery.png" alt="Logo de jQuery" class="logo"></a><br>
+            <table id="menu">
+                <tr>
+                    <td><a href="1-index.html">Introducción</a></td>
+                    <td><a href="2-empezando.html">Empezando a usar jQuery</a></td>
+                    <td><a href="3-selectores.html">Selectores</a></td>
+                    <td><a href="#">DOM</a></td>
+                    <td><a href="#">Efectos</a></td>
+                    <td><a href="#">Eventos</a></td>
+                    <td><a href="#">Drag&Drop</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="content">
+            <h1>Empezando con jQuery</h1>
+
+            <h3>¿Cómo lo usamos?</h3>
+            <ol>
+                <li>Nos iremos a la <a href="https://jquery.com/">página oficial</a> y descargaremos la biblioteca.</li>
+                <li>Enlazamos el archivo descargado a nuestro documento HTML.</li>
+            </ol>
+
+            <h3>Estructura de jQuery</h3>
+            <p>Siempre que vayamos a hacer uso de la librería jQuery, deberemos utilizar una sintaxis estructurada, divida en fragmentos fácilmente diferenciables:</p>
+            <ul>
+                <li>Función jQuery</li>
+                <li>Un selector como parámentro</li>
+                <li>Uno o varios métodos de la librería</li>
+                <li>Opcionalmente, parámetros del método.</li>
+            </ul>
+
+            <div id="ejemplo">
+                <pre>&lt;script type="text/javascript"&gt;</pre>
+                <pre>$(document).ready(function() { </pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$("p").css("background-color","red");</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jQuery("p").css("background-color","red");</pre>
+                <br>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$("input").attr("value","25");</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jQuery("input").attr("value","25");</pre>
+                <pre>});</pre>
+            </div>
+
+            <p style="color:red"><b>Puedes ver que usar $ o usar la función jQuery es lo mismo.</b></p>
+            <br>
+            <p>De este modo, la estructura de jQuery sería así:</p>
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(nodo_seleccionado).nombre_del_metodo([parámetros])</h4>
+            <br>
+
+            <h3>$(document).ready(), ¿por qué?</h3>
+            <p>Cuando veas código jQuery en cualquier sitio verás que siempre se encuentra esta sentencia al principio del código y que rodea todo lo que se declara en jQuery.
+                Básicamente el método ready() se encarga de que, una vez esté cargada la página y se haya generado el árbol DOM, todo lo de dentro del código pueda ejecutarse
+                ya que, como vimos anteriormente, jQuery trabaja directamente sobre los nodos del árbol DOM.
+            </p>
+
+            <p>Este sería el código que habría que escribir:</p>
+            <div id="ejemplo">
+                <pre>$(document).ready(function() {</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Aquí iría el código del script</pre>
+                <pre>});</pre>
+            </div>
+        </div>
+
+        <div id="footer">
+            <center>Documento realizado por Rubén Roldán Cantón 2020/2021</center>
+        </div>
+    </div>
+</body>
+</html>
