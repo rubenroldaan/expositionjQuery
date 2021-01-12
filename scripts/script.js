@@ -68,4 +68,23 @@ $(document).ready(function() {
     $("#penultimohijo").click(function() {
         $("#padre2 p:nth-last-child(2)").css("background-color","yellow")
     })
+
+
+    //EJEMPLOS MANIPULACION DOM
+    $("#cambiar").click(function() {
+        $(".parrafo1").text("El párrafo ha cambiado su contenido.")
+    })
+    $("#obtener").click(function() {
+        alert($(".parrafo1").text())
+    })
+
+    $("#obtenertext").click(function() {
+        alert($(".muestra").text())
+    })
+    $("#obtenerhtml").click(function() {
+        alert($(".muestra").html())
+    })
+    $("#obtenertextinputmuestra").click(function() {
+        alert($("#textareamuestra").val())
+    })
 });

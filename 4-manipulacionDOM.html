@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabajo realizado por Rubén Roldán Cantón</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/jquery-3.5.1.js"></script>
+    <script src="scripts/script.js"></script>
 </head>
 <body>
     <div id="main">
@@ -27,9 +29,86 @@
             <h1>Manipulación del árbol DOM</h1>
 
             <p>Como ya hemos mencionado, uno de los puntos fuertes de jQuery es cambiar y modificar el contenido y la estructura del árbol DOM generado por el documento HTML.</p>
-            <p>En jQuery existen los llamados <b>getters y setters</b> (como estudiamos en Java el 1º) que nos permiten similar, obtener y/o establecer el contenido de diferentes
-                elementos del árbol DOM.
+            <p>En jQuery existen los llamados <b>getters y setters</b> (como estudiamos en Java el 1º) que nos permiten realizar estas acciones.
             </p>
+
+            <h3>Los getters y setters .text(), .html() y .val()</h3>
+
+            <h4>.text()</h4>
+            <p>Con este método se obtiene en forma de string el texto contenido en un nodo o de los hijos de dicho nodo. Si queremos almacenarlo en una variable quedaría así:</p>
+            <p style="padding-left: 20px;"><b>var x = $("#parrafo1").text()</b></p>
+
+            <p>De esta forma se guardaría en la variable x el texto del elemento con ID "parrafo1".
+            </p>
+
+            <p>Si dejamos el método sin pasarle ningún parámetro, actuaría como un <b>getter</b>. En cambio, si le pasamos como parámetro un String, actuaría como un
+                <b>setter.</b> Por ejemplo:
+            </p>
+
+            <div id="ejemplo" style="padding-left: 100px; font-size: 15px;">
+                $("#contenido").text()
+                <br>
+                <br>
+                $("#contenido").text("Esto es un contenido")
+            </div>
+
+            <p>Ejemplo:</p>
+
+            <div id="ejemplo">
+                <p class="parrafo1">Esto es un párrafo antes de ser cambiado</p><br>
+                <button id="cambiar">Cambiar texto</button>
+                <button id="obtener">Obtener texto</button>
+            </div>
+
+            <h4>.html()</h4>
+
+            <p>Es parecido al método visto anteriormente, con la diferencia que .html() <b>trata la información como formato HTML</b> mientras que .text() como <b>texto plano</b>.
+                Viendo este ejemplo va a quedar todo mucho más claro:
+            </p>
+
+            <div id="ejemplo">
+                <div class="muestra">
+                    <p>Soy un parráfo dentro de muestra.</p>
+                    <ul>
+                        <li>Soy una lista dentro de muestra</li>
+                    </ul>
+
+                    
+                    <span>Soy un span dentro de muestra</span><br>
+                    <input type="text" id="inputmuestra"><br><br>
+                </div>
+                <button id="obtenertext">.text()</button>
+                <button id="obtenerhtml">.html()</button>
+                <button id="obtenertextinputmuestra">Y si...¿fuese un input?</button>
+            </div>
+
+            <h4>.val()</h4>
+            <p>Como hemos visto, los métodos .html() ni .text() obtienen el contenido de un input. El encargado de esta labor es
+                .val(), que recoge el valor del atributo "value" de los campos de un formulario. Ya sean los input,
+                los select, los textarea, etc.
+            </p>
+            <p>Al igual que los anteriores métodos, si no le pasamos ningún parámetro actúa como <b>getter</b>; y si le pasamos contenido
+                actúa como <b>setter</b>.
+            </p>
+
+            Ejemplos:
+
+            <div id="ejemplo">
+                <form action="procesar.php" method="get">
+                    <fieldset>
+                        <h4>Formulario de alta de usuarios</h4>
+                        Nombre: <input type="text" name="nombre"><br>
+                        Sexo:
+                        <input type="radio" name="genero" value="Hombre" checked/>Hombre
+                        <input type="radio" name="genero" value="Hombre" />Mujer
+                        <br>
+                        ¿Qué SO usas?<br>
+                        <input type="checkbox" name="sistema" value="Windows" />Windows
+                        <input type="checkbox" name="sistema" value="Ubuntu" />Ubuntu
+                        <br>
+                    </fieldset>
+                </form>
+            </div>
         </div>
 
         <div id="footer">
