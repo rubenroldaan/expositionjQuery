@@ -1,0 +1,71 @@
+$(document).ready(function() {
+    //Ejemplo pares impares
+    $("#pares").click(function() {
+        $(".numeros:even").css("border","3px solid red")
+    });
+
+    $("#impares").click(function() {
+        $(".numeros:odd").css("border","3px solid blue") 
+    })
+
+    $("#reiniciar").click(function() {
+        $(".numeros").css("border","none")
+    })
+
+    
+
+    //EJEMPLOS SELECTORES INDICES
+    $("#first").click(function() {
+        $(".refrescos:first").css("border","3px solid red")
+    })
+
+    $("#last").click(function() {
+        $(".refrescos:last").css("border","3px solid blue")
+    })
+
+    $("#eq").click(function() {
+        $(".refrescos:eq(4)").css("border","3px solid green")
+    })
+
+    $("#menorque").click(function() {
+        $(".refrescos:lt(3)").css("border","3px solid yellow")
+    })
+
+    $("#mayorque").click(function() {
+        $(".refrescos:gt(4)").css("border","3px solid brown")
+    })
+
+    $("#entre").click(function() {
+        $(".refrescos").slice(1,3).css("border","3px solid purple")
+    })
+
+
+    //EJEMPLOS SELECTORES CONTENIDO
+    $("#contains").click(function() {
+        $("p:contains(Lipsum)").css("color","red")
+    })
+    $("#has").click(function() {
+        $("p:has(i)").css("color","blue")
+    })
+    $("#not").click(function() {
+        $("p:not(.parrafo)").css("color","green")
+    })
+
+
+    //EJEMPLOS SELECTORES HERENCIA
+    $("#primerhijo").click(function() {
+        $("#padre1 p:first-child").css("background-color","yellow")
+    })
+
+    $("#ultimohijo").click(function() {
+        $("#padre2 p:last-child").css("background-color","yellow")
+    })
+
+    $("#segundohijo").click(function() {
+        $("#padre1 p:nth-child(2)").css("background-color","yellow")
+    })
+
+    $("#penultimohijo").click(function() {
+        $("#padre2 p:nth-last-child(2)").css("background-color","yellow")
+    })
+});

@@ -69,3 +69,11 @@ li {
 h3 {
     border-bottom: 1px solid rgb(8, 0, 117);
 }
+
+.numeros {
+    width: 150px;
+}
+
+.refrescos {
+    width: 150px;
+}

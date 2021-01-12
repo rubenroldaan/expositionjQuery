@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabajo realizado por Rubén Roldán Cantón</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/jquery-3.5.1.js"></script>
+    <script src="scripts/script.js"></script>
 </head>
 <body>
     <div id="main">
@@ -15,7 +17,7 @@
                     <td><a href="1-index.html">Introducción</a></td>
                     <td><a href="2-empezando.html">Empezando a usar jQuery</a></td>
                     <td><a href="3-selectores.html">Selectores</a></td>
-                    <td><a href="#">DOM</a></td>
+                    <td><a href="4-manipulacionDOM.html">DOM</a></td>
                     <td><a href="#">Efectos</a></td>
                     <td><a href="#">Eventos</a></td>
                     <td><a href="#">Drag&Drop</a></td>
@@ -36,6 +38,143 @@
             <p>La biblioteca de jQuery soporta muchos selectores y en gran parte son iguales que los de CSS3. Para conocer todos los selectores que existen en las últimas versiones de
                 jQuery os dejo un <a href="https://api.jquery.com/category/selectors/">enlace</a> con la lista completa.
             </p>
+            <p>Podemos obviar los selectores que ya conocemos que serían los de identificador, de etiqueta y los de clase. Directamente vamos a pasar con los <b>pseudoselectores</b> y
+                los <b>filtros</b>.
+            </p>
+
+            <h3>Pseudoselectores, qué palabra...</h3>
+
+            <p>Los pseudoselectores son aquellos que marcan los elementos que están en un estado específico, por ejemplo, los que son el primer elemento de su tipo, o aquellos
+                por los que el cursor les pasa por encima. Podemos distinguir los pseudoselectores en función de su especificación:
+            </p>
+
+            <h4>Según el índice</h4>
+            <ul>
+                <li><b>odd</b>: Selecciona los elementos o nodos impares de una lista.</li>
+                <li><b>even</b>: Selecciona los elementos o nodos pares de una lista.</li>
+            </ul>
+
+            <p>Ejemplo:</p>
+            <div id="ejemplo">
+                <img src="imgs/la1.png" alt="La 1" class="numeros">
+                <img src="imgs/la2.png" alt="La 2" class="numeros">
+                <img src="imgs/antena3.png" alt="Antena 3" class="numeros">
+                <br>
+                <img src="imgs/cuatro.png" alt="Cuatro" class="numeros">
+                <img src="imgs/telecinco.png" alt="Telecinco" class="numeros">
+                <img src="imgs/lasexta.png" alt="La sexta" class="numeros">
+                <br>
+                <button id="pares">Los pares</button>
+                <button id="impares">Los impares</button>
+                <br><br>
+                <button id="reiniciar">Reiniciar</button>
+            </div>
+
+            <ul>
+                <li><b>eq(x)</b>: Selecciona un elemento determinado de la lista pasándoselo como parámetro.</li><br>
+                <li><b>first</b>: Selecciona el primer elemento.</li><br>
+                <li><b>last</b>: Selecciona el último elemento.</li><br>
+                <li><b>lt(x)</b>: Selecciona todos los elementos de la lista cuyo índice sea MENOR que el parámetro indicado.</li><br>
+                <li><b>gt(x)</b>: Selecciona todos los elementos de la lista cuyo índice sea MAYOR que el parámetro indicado</li><br>
+                <li><b>slice(x,y)</b>: Selecciona todos los elementos de la lista cuyo índice esté comprendido entre los parámetros.</li><br>
+            </ul>
+
+            <p>Ejemplo:</p>
+
+            <div id="ejemplo">
+                <img src="imgs/fantalimon.png" alt="Fanta limon" class="refrescos">
+                <img src="imgs/fantanaranja.png" alt="Fanta naranja" class="refrescos">
+                <img src="imgs/nestea.png" alt="Nestea" class="refrescos">
+                <br>
+                <img src="imgs/cocacola.png" alt="Coca Cola" class="refrescos">
+                <img src="imgs/sevenup.png" alt="Seven up" class="refrescos">
+                <img src="imgs/sprite.png" alt="Sprite" class="refrescos">
+                <br>
+                <button id="first">Primero</button>
+                <button id="last">Último</button>
+                <button id="eq">El elemento 4</button>
+                <button id="menorque">Menor que 3</button>
+                <button id="mayorque">Mayor que 4</button>
+                <button id="entre">Entre 1 y 3</button>
+            </div>
+
+            <h4>Según el contenido</h4>
+
+            <ul>
+                <li><b>contains(x)</b>: Selecciona todos los elementos o hijos del elemento que contiene el texto
+                especificado como parámetro. <b style="color:red">CUIDADO!</b> Distingue entre mayúsculas y minúsculas</li>
+                <br>
+                <li><b>has(x)</b>: Selecciona todos los elementos que contiene el elemento hijo indicado como parámetro.</li><br>
+                <li><b>not(x)</b>: Selecciona todos los elementos que no pertenece al selector especificado como parámetro.</li>
+            </ul>
+            <p class="parrafo">Diferenciamos el contains y el has en que contains indica texto o palabras, y el has indica etiquetas.</p>
+
+            <div id="ejemplo">
+                <b><p class="parrafo">Loren Lipsum</p></b>
+                <b><p>Crosten Ben</p></b>
+                <b><p class="parrafo">Loren <i>Astralis</i></p></b>
+                <button id="contains">Contiene "Lipsum"</button>
+                <button id="has">Tiene una etiqueta &lt;i&gt;</button>
+                <button id="not">No es de la clase "párrafo"</button>
+            </div>
+            
+            <h4>Según la herencia</h4>
+            <p class="parrafo">jQuery nos permite seleccionar elementos del árbol DOM en función de la herencia que posee, por encima o por debajo.</p>
+            <ul>
+                <li><b>first-child</b>: Selecciona el primer hijo del elemento especificado en el selector</li><br>
+                <li><b>last-child</b>: Selecciona el último hijo del elemento especificado en el selector</li><br>
+                <li><b>nth-child(x)</b>: Selecciona el elemento hijo indicado por el índice empezando desde el principio.</li><br>
+                <li><b>nth-last-child(x)</b>: Selecciona el elemento hijo indicado por el índice empezando desde el final.</li><br>
+            </ul>
+
+            <p class="parrafo">Ejemplo:</p>
+
+            <div id="ejemplo">
+                <div style="width:90%;border:3px solid purple" id="padre1">
+                    Yo soy el padre 1.
+                    <p style="border:1px solid black; width: 50%;">Soy el <span>primer</span> hijo, ya no me hacen mucho caso en casa...</p>
+                    <p style="border:1px solid black; width: 50%;">Yo soy el segundo hijo y suelo ser consentido.</p>
+                    <p style="border:1px solid black; width: 50%;">Yo soy el hijo menor y si rompo algo, suelo culpar al mediano...</p>
+                </div>
+                <br>
+                <div style="width:90%;border:3px solid red" id="padre2">
+                    <b>Yo soy el padre 2.</b>
+                    <p style="border:1px solid black; width: 50%;">Soy el primer hijo, como mi padre chochea voy a buscarle una residencia.</p>
+                    <p style="border:1px solid black; width: 50%;">Yo soy el segundo hijo y paso desapercibido en mi casa.</p>
+                    <p style="border:1px solid black; width: 50%;">Yo soy el tercer hijo y soy el punching-ball de esta familia...</p>
+                    <p style="border:1px solid black; width: 50%;">Yo soy el cuarto hijo y todavía no he estrenado calzoncillos...</p>
+                    <p style="border:1px solid black; width: 51%;">Quinto hijo y la sudadera más nueva que tengo es de cuando salió el último disco de Queen.</p>
+                </div><br>
+
+                <button id="primerhijo">Primer hijo del padre 1</button>
+                <button id="ultimohijo">Último hijo del padre 2</button>
+                <button id="segundohijo">Segundo hijo del padre 1</button>
+                <button id="penultimohijo">Penúltimo hijo del padre 2</button>
+            </div>
+
+            <p><b style="color:red">OJO!</b> Para los hijos no se empieza desde 0, sino desde 1.</p>
+
+            <h4>Según su valor</h4>
+
+            <ul>
+                <li><b>=</b>: El valor del atributo es exactamente igual que el string indicado.</li><br>
+                <li><b>!=</b>: El valor del atributo es diferente al string indicado.</li><br>
+                <li><b>^=</b>: El valor del atributo empieza por el string indicado.</li><br>
+                <li><b>$=</b>: El valor del atributo termina por el string indicado.</li><br>
+                <li><b>*=</b>: El valor del atributo contiene el string indicado.</li><br>
+                <li><b>~=</b>: El valor del atributo contiene el string indicado o precedido/seguido por espacio</li><br>
+            </ul>
+
+            <div id="ejemplo" style="padding-left: 100px;font-size: 15px;">
+                $("input[type=text]")<br><br>
+                $("input[type!=text]")<br><br>
+                $("img[alt^=Foto]")<br><br>
+                $("img[alt$=s]")<br><br>
+                $("img[alt*=a]")<br><br>
+                $("img[alt~=corazado]")<br><br>
+            </div>
+
+
         </div>
 
         <div id="footer">
