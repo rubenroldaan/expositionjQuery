@@ -87,4 +87,42 @@ $(document).ready(function() {
     $("#obtenertextinputmuestra").click(function() {
         alert($("#textareamuestra").val())
     })
+
+
+    $("#text").click(function() {
+        alert($("form input:text").val())
+    })
+    $("#radio").click(function() {
+        alert($("form input:radio:checked").val())
+    })
+    $("#checkbox").click(function() {
+        alert($("form input:checkbox:checked").val())
+    })
+    $("#select").click(function() {
+        alert($("form select").val())
+    })
+    $("#textcambiar").click(function() {
+        $("form input:text").val("Rubén Roldán Cantón")
+    })
+    $("#selectcambiar").click(function() {
+        $("form select").val("+18")
+    })
+    $("#muestracolor").click(function() {
+        alert($(".parrafocambiarcolor").attr("alt"))
+    })
+    $("#cambiacolor").click(function() {
+        $(".parrafocambiarcolor").attr("alt","Alt cambiado")
+    })
+
+    
+    $("#obtenerpepe").click(function() {
+        alert($("#ejemplocss p:first-child").css("background-color"))
+    })
+    $("#obtenerjuan").click(function() {
+        alert($("#ejemplocss p:last-child").css("background-color"))
+    })
+    $("#cambiardos").click(function() {
+        $("#ejemplocss p:first-child").css("background-color","pink")
+        $("#ejemplocss p:last-child").css("background-color","yellow")
+    })
 });

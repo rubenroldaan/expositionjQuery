@@ -18,7 +18,7 @@
                     <td><a href="2-empezando.html">Empezando a usar jQuery</a></td>
                     <td><a href="3-selectores.html">Selectores</a></td>
                     <td><a href="4-manipulacionDOM.html">DOM</a></td>
-                    <td><a href="#">Efectos</a></td>
+                    <td><a href="5-efectos.html">Efectos</a></td>
                     <td><a href="#">Eventos</a></td>
                     <td><a href="#">Drag&Drop</a></td>
                 </tr>
@@ -100,14 +100,69 @@
                         Nombre: <input type="text" name="nombre"><br>
                         Sexo:
                         <input type="radio" name="genero" value="Hombre" checked/>Hombre
-                        <input type="radio" name="genero" value="Hombre" />Mujer
+                        <input type="radio" name="genero" value="Mujer" />Mujer
                         <br>
                         ¿Qué SO usas?<br>
                         <input type="checkbox" name="sistema" value="Windows" />Windows
                         <input type="checkbox" name="sistema" value="Ubuntu" />Ubuntu
                         <br>
+                        Edad:
+                        <select name="edad">
+                            <option value="-18">Menos de 18</option>
+                            <option value="18">18</option>
+                            <option value="+18">Más de 18</option>
+                        </select>
                     </fieldset>
                 </form>
+
+                <br><br>
+                <button id="text">Text</button>
+                <button id="radio">Radio</button>
+                <button id="checkbox">Checkbox</button>
+                <button id="select">Select</button>
+                <button id="textcambiar">Cambiar valor text</button>
+                <button id="selectcambiar">Cambiar valor select</button>
+            </div>
+
+            <h3>Manipulación de atributos con .attr() y .css()</h3>
+            <p>Con los métodos anteriormente vistos podemos manipular el contenido de los nodos. A continuación, vamos a ver
+                cómo manipular sus atributos.
+            </p>
+
+            <h4>.attr()</h4>
+
+            <p>Permite obtener el valor de un atributo del elemento seleccionado en el objeto jQuery o asignar el valor que
+                queramos a ese atributo o atributos. Por ejemplo:
+            </p>
+
+            <div id="ejemplo" style="padding-left: 100px;">
+                alert($("div").attr("class"));<br>
+                alert($("img").attr("src"));<br><br>
+                $("div").attr("class","clase2");<br>
+                $("img").attr("src","imgs/foto2.png");
+            </div>
+
+            <p>Ejemplo práctico:</p>
+            <div id="ejemplo" style="padding-left: 100px;">
+                <p class="parrafocambiarcolor" alt="Alt antes de ser cambiado">Este texto tiene un fondo amarillo</p>
+                <button id="muestracolor">¿Cuál es su valor de alt?</button>
+                <button id="cambiacolor">Cambiar atributo alt</button>
+            </div>
+
+            <h4>.css()</h4>
+            <p>Este método permite ver el valor de la propiedad CSS del elemento y añadir nuevas propiedades y valores.
+                Si queremos obtener el valor de mas de 1 propiedad nos devolvera los valores en formato array.
+            </p>
+            <p>Ejemplo:</p>
+
+            <div id="ejemplo">
+                <div id="ejemplocss">
+                    <p style="background-color: yellow;">Hola me llamo Pepe</p>
+                    <p style="background-color: pink;">Hola me llamo Juan</p>
+                </div>
+                <button id="obtenerpepe">¿De qué color es Pepe?</button>
+                <button id="obtenerjuan">¿De qué color es Juan?</button>
+                <button id="cambiardos">¿Quieres cambiar sus colores?</button>
             </div>
         </div>
 
