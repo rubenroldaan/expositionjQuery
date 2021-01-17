@@ -173,7 +173,7 @@ $(document).ready(function() {
 
     var contMouseEnter = 0;
     $("#padre").mouseenter(function() {
-        cont++;
+        contMouseEnter++;
         $("#contador").text(contMouseEnter);
     })
 
