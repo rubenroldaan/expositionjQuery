@@ -125,4 +125,100 @@ $(document).ready(function() {
         $("#ejemplocss p:first-child").css("background-color","pink")
         $("#ejemplocss p:last-child").css("background-color","yellow")
     })
+
+
+
+    // EJEMPLOS EVENTOS
+    $(".iescelia").click(function() {
+        alert("Has hecho click sobre la imagen!")
+    })
+
+    $("#shinchan img").click(function() {
+        $("#shinchan p").text("Has hecho click en la imagen.");
+        $("#shinchan .mensaje").css("background-color","lightsalmon");
+    })
+
+    $("#misae img").dblclick(function() {
+        $("#misae p").text("Has hecho doble click en la imagen.");
+        $("#misae .mensaje").css("background-color","lightsalmon");
+    })
+
+    $("#hiroshi img").mousedown(function () { 
+        $("#hiroshi p").text("Has pulsado la imagen.");
+        $("#hiroshi .mensaje").css("background-color","lightgreen");
+    });
+    $("#hiroshi img").mouseup(function () { 
+        $("#hiroshi p").text("Has soltado la imagen.");
+        $("#hiroshi .mensaje").css("background-color","lightsalmon");
+    });
+
+    $("#himawari img").mouseover(function () { 
+        $("#himawari p").text("Has entrado en la imagen");
+        $("#himawari .mensaje").css("background-color","lightgreen");
+    });
+    $("#himawari img").mouseout(function () { 
+        $("#himawari p").text("Has salido en la imagen");
+        $("#himawari .mensaje").css("background-color","lightsalmon");
+    });
+
+    $("#kazama input").focusin(function() {
+        $("#kazama p").text("Has hecho focus");
+        $("#kazama .mensaje").css("background-color","lightgreen");
+    })
+    $("#kazama input").focusout(function() {
+        $("#kazama p").text("Has dejado de hacer focus");
+        $("#kazama .mensaje").css("background-color","lightsalmon");
+    })
+
+
+    var contMouseEnter = 0;
+    $("#padre").mouseenter(function() {
+        cont++;
+        $("#contador").text(contMouseEnter);
+    })
+
+
+    $("#keydown").keydown(function(e) {
+        $("#pruebaeventosteclado").text($("#pruebaeventosteclado").text() + e.which);
+    })
+
+
+
+    $("input[name=nombre]").focusin(function() {
+        $("input[name=nombre]").css("background-color","lightskyblue")
+    })
+    $("input[name=nombre]").focusout(function() {
+        if($(this).val()=="") {
+            $("input[name=nombre]").css("background-color","lightsalmon")
+            alert("No puedes dejar el campo vacío.")
+        }
+        else {
+            $("input[name=nombre]").css("background-color","lightgreen")
+        }
+    })
+    $("input:radio").change(function() {
+        alert("Y la culpa no era mía ni donde estaba ni cómo vestía...")
+    })
+    $("form").submit(function() {
+        alert("Enviaste el formulario!")
+    })
+
+
+
+    $("#conjunto").on("click mouseover", function() {
+        $("#parradosinsertados").append("<p>Se añade texto pulsando o pasando por encima.</p>")
+    })
+    $("#conjunto2").on("click mouseover", function() {
+        $("#parradosinsertados2").append("<p>Se añade texto pulsando o pasando por encima.</p>")
+    })
+    $("#desconjunto").click(function() {
+        $("#conjunto2").off("mouseover")
+    })
+
+
+
+    $("#hover").hover(
+        function() {$("#hover").css("background-color","lightgreen")},
+        function() {$("#hover").css("background-color","lightskyblue")}
+    )
 });

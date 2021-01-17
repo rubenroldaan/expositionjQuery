@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo realizado por Rubén Roldán Cantón</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/jquery-3.5.1.js"></script>
+    <script src="scripts/script.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <a href="1-index.html"><img src="imgs/logojquery.png" alt="Logo de jQuery" class="logo"></a><br>
+            <table id="menu">
+                <tr>
+                    <td><a href="1-index.html">Introducción</a></td>
+                    <td><a href="2-empezando.html">Empezando a usar jQuery</a></td>
+                    <td><a href="3-selectores.html">Selectores</a></td>
+                    <td><a href="4-manipulacionDOM.html">DOM</a></td>
+                    <td><a href="5-eventos.html">Eventos</a></td>
+                    <td><a href="#">Efectos</a></td>
+                    <td><a href="#">Drag&Drop</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="content">
+            <h1>Eventos</h1>
+            <p>
+            jQuery contiene una serie de métodos para asociar controladores de eventos (en inglés event handlers) a selectores. Cuando el evento que hayamos indicado ocurre,
+            la función prevista es ejecutada. Dentro de dicha función podemos utilizar la palabra <b>this</b> que hace referencia al elemento donde ocurre el evento.
+            </p>
+
+            <p>Si quieres tener información más detallada acerca de los eventos, visite la <a href="https://api.jquery.com/category/events/">página oficial.</a></p>
+
+            <p>Para asociar un evento a un objeto jQuery haríamos lo siguiente:</p>
+
+            <p style="padding-left: 50px;">
+                <b>$(elemento).evento(funcion())</b>
+            </p>
+
+            <p>Vamos a ver un ejemplo simple para que quede algo más claro.</p>
+
+            <div id="ejemplo" style="padding-left: 100px;">
+                $(document).ready(function() {<br>
+                &nbsp;&nbsp;&nbsp;$("img.iescelia").click(function() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Has hecho click en la imagen!")<br>
+                    &nbsp;&nbsp;&nbsp;})<br>
+                })
+                <br><br>
+                <img src="imgs/celia.png" alt="IES Celia Viñas" class="iescelia">
+            </div>
+
+            <p>Establecemos que, cuando ocurra el evento de click sobre la imagen, haya un mensaje de alerta.</p>
+
+            <h3>Listado de eventos</h3>
+            <h4>Eventos de ratón</h4>
+            <ul>
+                <li><b>click()</b>: Cuando haces click en el elemento.</li>
+                <li><b>dblclick()</b>: Cuando haces doble click en el elemento. Tiene que ser seguido.</li>
+                <li><b>mousedown()</b>: Cuando pulsamos el botón del ratón en el elemento.</li>
+                <li><b>mouseup()</b>: Cuando sueltas el botón del ratón en el elemento.</li>
+                <li><b>mouseenter()</b>: Cuando el puntero ha entrado en el elemento.</li>
+                <li><b>mouseleave()</b>: Cuando el puntero sale del elemento.</li>
+                <li><b>mousemove()</b>: Cuando el puntero se mueve sobre la superficie del elemento.</li>
+                <li><b>mouseover()</b>: Parecido a <i>mouseenter()</i>, pero se diferencia cuando hay elementos anidados.</li>
+                <li><b>mouseout()</b>: Parecido a <i>mouseleave()</i> con la diferencia de distinción de elementos anidados.</li>
+                <li><b>hover()</b>: Cuando el puntero del ratón entra y sale del elemento.</li>
+                <li><b>focusin()</b>: Cuando un elemento gana el focus.</li>
+            </ul>
+
+            <div id="ejemplo">
+                <table cellspacing="0" cellpadding="20px" align="center">
+                    <tbody>
+                        <tr valign="top" align="center">
+                            <td>
+                                <div id="shinchan">
+                                    <div class="mensaje">
+                                        <p>Haga click en la imagen</p>
+                                        <img src="imgs/shinchan.png" alt="Shin Chan" style="width: 130px;">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="misae">
+                                    <div class="mensaje">
+                                        <p>Haga doble click en la imagen</p>
+                                        <img src="imgs/misae.png" alt="Misae" style="width: 150px;">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="hiroshi">
+                                    <div class="mensaje">
+                                        <p>Pulse sobre la imagen</p>
+                                        <img src="imgs/hiroshi.jpg" alt="Hiroshi" style="width: 200px;">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr valign="top" align="center">
+                            <td>
+                                <div id="himawari">
+                                    <div class="mensaje">
+                                        <p>Pase por encima de la imagen</p>
+                                        <img src="imgs/himawari.png" alt="Himawari" style="width:150px">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="kazama">
+                                    <div class="mensaje">
+                                        <input type="text" value="Escribe algo">
+                                        <img src="imgs/Kazama.png" alt="Kazama" style="width:100px">
+                                        <p>Haz focus en el input</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="pruebaherencia">
+                                    <div class="mensaje">
+                                        <div id="padre" style="width: 100%;height: 94%; background-color:yellow; padding-top: 15px;">
+                                            <p>Yo soy el padre</p>
+                                            <div id="hijo" style="position:relative; width: 80%; height: 60%; background-color: pink; left: 5px;">
+                                                <p>Yo soy el hijo</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p id="contador" style="font-size: 15px;"></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Eventos de teclado</h4>
+            <ul>
+                <li><b>keydown()</b>: Cuando pulsamos una tecla y el navegador recibe un carácter. </li>
+                <li><b>keypress()</b>: Cuando pulsamos una tecla. Se utiliza cuando queremos saber qué tecla se ha pulsado. Registra un evento por cada carácter introducido mientras
+                                        que keydown() solo registra un evento para esa tecla.</li>
+                <li><b>keyup()</b>: Cuando soltamos una tecla.</li>
+            </ul>
+
+            <div id="ejemplo">
+                <input id="keydown" type="text" placeholder="Yo tengo keydown."><br><br>
+
+                <p id="pruebaeventosteclado"></p>
+            </div>
+
+            <h4>Eventos de formulario</h4>
+            <ul>
+                <li><b>change()</b>: Cuando el valor del elemento cambia.</li>
+                <li><b>submit()</b>: Cuando se envía un formulario.</li>
+            </ul>
+
+            <div id="ejemplo">
+                <form action="5-eventos.html">
+                    Nombre: <input type="text" name="nombre" id=""><br><br>
+                    Sexo:
+                    <input type="radio" name="sexo" value="hombre">Hombre
+                    <input type="radio" name="sexo" value="mujer" checked>Mujer
+                    <br><br>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+
+            <h3>El método on()</h3>
+            <p>El metodo on() es uno de los mas versatiles que podemos encontrar en JQuery, y permite manejar los
+                distintos eventos a nuestra disposicion de multiples maneras. Ha sustituido a metodos anteriores
+                como bind() y live(). Su sintasis es la siguiente:
+            </p>
+                <div id="ejemplo" style="padding-left: 100px;font-size: 16px;">
+                    .on( eventos [, selectores ] [, datos ], manejador(eventObject) )
+                </div>
+                <p>Así, podemos asociar dos o más eventos a un elemento. Vamos a verlo con este sencillo ejemplo:</p>
+                <div id="ejemplo">
+                    <button id="conjunto">Pulsa o pasa por encima</button>
+                    <div id="parradosinsertados">
+                    </div>
+                </div>
+            <h4>off()</h4>
+            <p>Al igual que con on() podemos asignar varios eventos, con off() podemos desvincularlos.</p>
+            <div id="ejemplo">
+                <button id="conjunto2">Pulsa o pasa por encima</button><button id="desconjunto">Quitar mouseover</button>
+                <div id="parradosinsertados2"></div>
+            </div>
+
+            <h3>Método auxiliar hover()</h3>
+            <p>El método auxiliar hover() no es un evento si no que recoge dos eventos en uno; el evento <b>mouseenter()</b> y el evento <b>mouseleave()</b>.
+                Esta sería su sintaxis:
+            </p>
+            <div id="ejemplo" style="padding-left: 100px;font-size: 16px;">
+                .hover( handlerIn(eventObject), handlerOut(eventObject) )
+            </div>
+            <p>Un ejemplo sencillo:</p>
+            <div id="ejemplo">
+                <div id="hover" style="background-color: lightsalmon; width: 250px; height: 130px;">
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <center>Documento realizado por Rubén Roldán Cantón 2020/2021</center>
+        </div>
+    </div>
+</body>
+</html>
