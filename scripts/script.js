@@ -263,4 +263,53 @@ $(document).ready(function() {
     $("#slidetoggle").click(function() { 
         $("#viejavisillo").slideToggle(3000);
     });
+
+
+    $("#addclass").click(function() {
+        $("#007").addClass("punteado")
+    })
+    $("#removeclass").click(function() {
+        $("#007").removeClass("punteado")
+    })
+    $("#toggleclass").click(function() {
+        $("#007").toggleClass("punteado")
+    })
+
+
+    $("#blind").click(function() {
+        $("#realmadrid img").toggle("blind","slow")
+    })
+    $("#bounce").click(function() {
+        $("#barcelona img").toggle("bounce","slow")
+    })
+    $("#shake").click(function() {
+        $("#psg img").toggle("shake","slow")
+    })
+    $("#clip").click(function() {
+        $("#united img").toggle("clip","slow")
+    })
+    $("#drop").click(function() {
+        $("#leeds img").toggle("drop","slow")
+    })
+    $("#explode").click(function() {
+        $("#bayern img").toggle("explode","slow")
+    })
+    $("#puff").click(function() {
+        $("#chelsea img").toggle("puff","slow")
+    })
+    $("#fade").click(function() {
+        $("#almeria img").toggle("fade","slow")
+    })
+    $("#fold").click(function() {
+        $("#athletic img").toggle("fold","slow")
+    })
+    $("#highlight").click(function() {
+        $("#borussia img").toggle("highlight","slow")
+    })
+    $("#pulsate").click(function() {
+        $("#astonvilla img").toggle("pulsate","slow")
+    })
+    $("#slide").click(function() {
+        $("#arsenal img").toggle("slide","slow")
+    })
 });

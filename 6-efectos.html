@@ -8,6 +8,8 @@
     <script src="scripts/jquery-3.5.1.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/jquery.easing.1.3.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
+    
 </head>
 <body>
     <div id="main">
@@ -19,9 +21,9 @@
                     <td><a href="2-empezando.html">Empezando a usar jQuery</a></td>
                     <td><a href="3-selectores.html">Selectores</a></td>
                     <td><a href="4-manipulacionDOM.html">DOM</a></td>
-                    <td><a href="5-efectos.html">Eventos</a></td>
+                    <td><a href="5-eventos.html">Eventos</a></td>
                     <td><a href="6-efectos.html">Efectos</a></td>
-                    <td><a href="#">Drag&Drop</a></td>
+                    <td><a href="7-dragdrop.html">Drag&Drop</a></td>
                 </tr>
             </table>
         </div>
@@ -88,10 +90,153 @@
             </ul>
 
             <div id="ejemplo">
-                <img id="viejavisillo" src="imgs/viejavisillo.png" alt="Vieja visillo"><br>
+                <img id="viejavisillo" src="imgs/viejavisillo.png" alt="Vieja visillo" style="width: 400px;"><br>
                 <button id="slideup">slideUp</button>
                 <button id="slidedown">slideDown</button>
                 <button id="slidetoggle">slideToggle</button>
+            </div>
+
+            <h3>Manejador de clases</h3>
+            <p>Existen métodos que alteran las clases de los elementos.</p>
+            <ul>
+                <li><b>addClass()</b>: Añade al elemento una clase.</li>
+                <li><b>removeClass()</b>: Quita al elemento una clase.</li>
+                <li><b>toggleClass()</b>: Añade y quita al elemento una clase.</li>
+            </ul>
+
+            <div id="ejemplo" style="font-size: 15px;padding-left: 100px;">
+                class solido {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 3px solid red;<br>
+                }
+                <br><br>
+                class solido {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 5px dotted green;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-radius: 6px;<br>
+                }
+                <br><br>
+                <img id="007" src="imgs/007.png" alt="007" class="solido"><br>
+                <button id="addclass">addClass</button>
+                <button id="removeclass">removeClass</button>
+                <button id="toggleclass">toggleClass</button>
+            </div>
+
+            <h3>jQuery UI</h3>
+            <p>Es una librería con algunos componentes para crear más dinamismo a partir de los métodos básicos de efectos de jQuery.
+                Primero deberemos descargar la librería desde <a href="https://jqueryui.com/download/">la página oficial</a> y a partir de ahí elegiremos los componentes.
+                Se utiliza con los métodos <b>show</b>, <b>hide</b> y <b>toggle</b>.
+            </p>
+            <p>Su sintaxis sería:</p>
+            <h4 style="padding-left: 50px;"> $("elemento").metodo( "tipo_efecto" , "velociad_efecto" ); </h4>
+
+            <div id="ejemplo">
+                <table cellspaccing="0" cellpadding="20px" align="center">
+                    <tbody>
+                        <tr valign="top" align="center">
+                            <td>
+                                <div id="realmadrid">
+                                    <div class="mensaje">
+                                        <p><button id="blind">Blind</button></p>
+                                        <img src="imgs/realmadrid.png" alt="Real Madrid" style="width: 110px;">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="barcelona">
+                                    <div class="mensaje">
+                                        <p><button id="bounce">Bounce</button></p>
+                                        <img src="imgs/fcb.png" alt="FCB" style="width: 150px;">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="psg">
+                                    <div class="mensaje">
+                                        <p><button id="shake">Shake</button></p>
+                                        <img src="imgs/psg.png" alt="PSG" style="width: 180px;">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr valign="top" align="center">
+                            <td>
+                                <div id="united">
+                                    <div class="mensaje">
+                                        <p><button id="clip">Clip</button></p>
+                                        <img src="imgs/united.png" alt="Manchester United" style="width: 150px;">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="leeds">
+                                    <div class="mensaje">
+                                        <p><button id="drop">Drop</button></p>
+                                        <img src="imgs/leeds.png" alt="Leeds" style="width: 150px;">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="bayern">
+                                    <div class="mensaje">
+                                        <p><button id="explode">Explode</button></p>
+                                        <img src="imgs/bayern.png" alt="Bayern" style="width: 150px;">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr valign="top" align="center">
+                            <td>
+                                <div id="chelsea">
+                                    <div class="mensaje">
+                                        <p><button id="puff">Puff</button></p>
+                                        <img src="imgs/chelsea.png" alt="Chelsea" style="width: 150px;">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="almeria">
+                                    <div class="mensaje">
+                                        <p><button id="fade">Fade</button></p>
+                                        <img src="imgs/almeria.png" alt="Almeria" style="width: 130px;">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="athletic">
+                                    <div class="mensaje">
+                                        <p><button id="fold">Fold</button></p>
+                                        <img src="imgs/athletic.png" alt="Athletic" style="width: 150px;">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr valign="top" align="center">
+                            <td>
+                                <div id="borussia">
+                                    <div class="mensaje" style="background-color: black;">
+                                        <p><button id="highlight">Highlight</button></p>
+                                        <img src="imgs/borussia.png" alt="Borussia" style="width: 110px;">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="astonvilla">
+                                    <div class="mensaje">
+                                        <p><button id="pulsate">Pulsate</button></p>
+                                        <img src="imgs/astonvilla.png" alt="Aston Villa" style="width: 120px;">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="arsenal">
+                                    <div class="mensaje">
+                                        <p><button id="slide">Slide</button></p>
+                                        <img src="imgs/arsenal.png" alt="Arsenal" style="width: 140px;">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
