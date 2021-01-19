@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabajo realizado por Rubén Roldán Cantón</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/jquery-3.5.1.js"></script>
-    <script src="scripts/script.js"></script>
 </head>
 <body>
     <div id="main">
@@ -30,11 +28,69 @@
             <p>Gracias a la librería jQuery UI existe la posibilidad de que los elementos en una página web puedan ser arrastrados por el usuario
                 mediante el ratón. Esto se lleva a cabo mediante el método <b>draggable()</b>.
             </p>
+            <p>Su sintaxis sería:</p>
+            <h4 style="padding-left: 50px;">$("elemento").draggable({opcion/evento});</h4>
+            <p>Existen una serie de opciones y eventos para personalizar el arrastre:</p>
+            <ul>
+                <li><b>axis</b>: Permite mover el elemento sobre un solo eje.</li>
+                <li><b>delay</b>: Retrasa en milisegundos el movimiento del elemento.</li>
+                <li><b>containment</b>: No permite que el elemento sobresalga del elemento padre.</li>
+                <li><b>handle</b>: Indicamos desde que descendiente del elemento hacemos arrastrable el elemento.</li>
+                <li><b>cancel</b>: Hace al elemento no arrastrable. Puede aplicarse a sus hijos.</li>
+                <li><b>disabled</b>: Similar a cancel, usando true o false.</li>
+                <li><b>opacity</b>: Se puede cambiar la opacidad del elemento mientras es arrastrado.</li>
+                <li><b>revert</b>: Al soltar el elemento vuelve a su posición inicial.</li>
+                <li><b>cursor</b>: Permite cambiar el cursor mientras se arrastra el elemento. Para conocerlos más a fondo haz click <a href="https://www.digitalocean.com/community/tutorials/css-cursor-property">aquí</a>.</li>
+            </ul>
+
+            <p>Ejemplo práctico:</p>
+            <div id="ejemplo">
+                <div id="margen" style="height: 600px;background-color: salmon; border: 5px dotted green;">
+                    <div id="todrag" class="mensaje" style="width: 420px;height: 291px;">
+                        <p style="font-size: 12px;">Vamos drogo!</p>
+                        <img src="imgs/khaalesi.png" alt="Khaleesi" style="width: 420px;height: 250px;">
+                    </div>
+                </div>
+                <br>
+                <button id="draggable">Draggable</button>
+                <button id="axisx">Axis(x)</button>
+                <button id="axisy">Axis(y)</button>
+                <button id="delay">Delay</button>
+                <button id="containment">Containment</button>
+                <button id="handle">Handle(p)</button>
+                <br>
+                <button id="cancel">Cancel(p)</button>
+                <button id="disabled">Disabled</button>
+                <button id="opacity">Opacity</button>
+                <button id="revert">Revert</button>
+                <button id="cursor">Cursor</button>
+            </div>
+
+            <h3>Eventos</h3>
+            <p>Existen eventos a los que asignar métodos a elementos draggables.</p>
+            <ul>
+                <li><b>start</b>: Cuando empiezas a mover el elemento</li>
+                <li><b>stop</b>: Cuando sueltas el elemento.</li>
+            </ul>
+
+            <div id="ejemplo">
+                <div id="margen" style="height: 600px;background-color: salmon; border: 5px dotted green;">
+                    <div id="todrag2" class="mensaje" style="width: 420px;height: 291px;">
+                        <p style="font-size: 12px;">Vamos drogo!</p>
+                        <img src="imgs/khaalesi.png" alt="Khaleesi" style="width: 420px;height: 250px;">
+                    </div>
+                </div>
+                <br>
+                <button id="start">Start/Stop</button>
+            </div>-->
         </div>
 
         <div id="footer">
             <center>Documento realizado por Rubén Roldán Cantón 2020/2021</center>
         </div>
     </div>
+    <script src="scripts/jquery-3.5.1.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
 </body>
 </html>

@@ -1,11 +1,11 @@
 $(document).ready(function() {
     //Ejemplo pares impares
     $("#pares").click(function() {
-        $(".numeros:even").css("border","3px solid red")
+        $(".numeros:odd").css("border","3px solid red")
     });
 
     $("#impares").click(function() {
-        $(".numeros:odd").css("border","3px solid blue") 
+        $(".numeros:even").css("border","3px solid blue") 
     })
 
     $("#reiniciar").click(function() {
@@ -311,5 +311,50 @@ $(document).ready(function() {
     })
     $("#slide").click(function() {
         $("#arsenal img").toggle("slide","slow")
+    })
+
+
+
+    //EJEMPLOS DRAGGABLE
+    $("#draggable").click(function() {
+        $("#todrag").draggable();
+    })
+    $("#axisx").click(function() {
+        $("#todrag").draggable({axis: "x"});
+    })
+    $("#axisy").click(function() {
+        $("#todrag").draggable({axis: "y"});
+    })
+    $("#delay").click(function() {
+        $("#todrag").draggable({delay: "1000"});
+    })
+    $("#containment").click(function() {
+        $("#todrag").draggable({containment: "parent"});
+    })
+    $("#handle").click(function() {
+        $("#todrag").draggable({handle: "p"});
+    })
+    $("#cancel").click(function() {
+        $("#todrag").draggable({cancel: "p"});
+    })
+    $("#disabled").click(function() {
+        $("#todrag").draggable({disabled: "true"});
+    })
+    $("#opacity").click(function() {
+        $("#todrag").draggable({opacity: "0.5"});
+    })
+    $("#revert").click(function() {
+        $("#todrag").draggable({revert: true});
+    })
+    $("#cursor").click(function() {
+        $("#todrag").draggable({cursor: "move"});
+    })
+
+
+    $("#start").click(function() {
+        $("#todrag2").draggable({
+            start: function() { $(this).find("p").text("Estamos volando!") },
+            stop: function(){ $(this).find("p").text("Hemos aterrizado") }
+        });
     })
 });
