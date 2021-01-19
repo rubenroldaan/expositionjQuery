@@ -221,4 +221,46 @@ $(document).ready(function() {
         function() {$("#hover").css("background-color","lightgreen")},
         function() {$("#hover").css("background-color","lightskyblue")}
     )
+
+
+
+    //EJEMPLOS EFECTOS
+    $(".cambiaisla").click(function() {
+        $("#islatentaciones").animate({width:"600px"},3000,'swing',function() {alert("Se acabó!")})
+    })
+
+    $("#fadeout").click(function() {
+        $("#lqsa").fadeOut(2000);
+    })
+    $("#fadein").click(function() {
+        $("#lqsa").fadeIn(3000, function() {alert("Se mostró")});
+    })
+    $("#fadetoggle").click(function() {
+        $("#lqsa").fadeToggle(2000);
+    })
+    $("#fadeto").click(function() {
+        $("#lqsa").fadeTo(3000,0.9);
+    })
+
+
+    $("#hide").click(function() {
+        $("#puigdemont").hide(2000);
+    })
+    $("#show").click(function() {
+        $("#puigdemont").show(1000);
+    })
+    $("#toggle").click(function() {
+        $("#puigdemont").toggle(2000);
+    })
+
+
+    $("#slideup").click(function() { 
+        $("#viejavisillo").slideUp(3000);
+    });
+    $("#slidedown").click(function() { 
+        $("#viejavisillo").slideDown(3000);
+    });
+    $("#slidetoggle").click(function() { 
+        $("#viejavisillo").slideToggle(3000);
+    });
 });
